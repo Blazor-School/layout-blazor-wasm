@@ -1,18 +1,11 @@
 ﻿@page "/dynamic-layout"
-@layout BlankLayout
 
 <LayoutView Layout="LayoutType">
     <h3>DynamicLayout</h3>
-        <label>
-            Main Layout:
-            <img class="layout-selector" @onclick="() => LayoutType = typeof(MainLayout)" src="/left-menu.png" />
-        </label>
-        <label>
-            Secondary Layout:
-            <img class="layout-selector" @onclick="() => LayoutType = typeof(SecondaryLayout)" src="/top-menu.png" />
-        </label>
+    <button type="button" class="layout-selector" @onclick="() => LayoutType = typeof(DarkLayout)">Dark Layout</button>
+    <button type="button" class="layout-selector" @onclick="() => LayoutType = typeof(LightLayout)">Light Layout</button>
 </LayoutView>
 
 @code {
-    public Type LayoutType { get; set; } = typeof(MainLayout);
+    public Type LayoutType { get; set; } = typeof(DarkLayout);
 }
