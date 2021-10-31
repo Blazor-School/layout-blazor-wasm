@@ -5,19 +5,14 @@
     <h3>DynamicLayout</h3>
         <label>
             Main Layout:
-            <img class="layout-selector" @onclick="() => ChangeLayout(typeof(MainLayout).FullName)" src="/left-menu.png" />
+            <img class="layout-selector" @onclick="() => LayoutType = typeof(MainLayout)" src="/left-menu.png" />
         </label>
         <label>
             Secondary Layout:
-            <img class="layout-selector" @onclick="() => ChangeLayout(typeof(SecondaryLayout).FullName)" src="/top-menu.png" />
+            <img class="layout-selector" @onclick="() => LayoutType = typeof(SecondaryLayout)" src="/top-menu.png" />
         </label>
 </LayoutView>
 
 @code {
     public Type LayoutType { get; set; } = typeof(MainLayout);
-
-    private void ChangeLayout(string layoutName)
-    {
-        LayoutType = Type.GetType(layoutName);
-    }
 }
